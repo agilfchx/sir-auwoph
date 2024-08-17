@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuWopH - Generate Report</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 20px;
+            background-color: #f5f5f5;
+            font-family: 'Roboto', sans-serif;
+        }
+        .code-block {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: 'Fira Code', monospace;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            word-wrap: break-word;
+        }
+        .line-number {
+            color: #75715e;
+            font-weight: bold;
+        }
+        .ellipsis {
+            color: #75715e;
+            font-style: italic;
+        }
+        .divider {
+            border-top: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        .plugin-name {
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+            position: relative;
+        }
+        .plugin-name .icon {
+            margin-right: 10px;
+            font-size: 1.5em;
+            color: #ff0000;
+        }
+        .file-info {
+            background-color: #e8e8e8;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            color: #555;
+            font-family: 'Roboto', sans-serif;
+        }
+        .file-number {
+            font-weight: bold;
+            color: #007bff;
+            margin-right: 10px;
+        }
+        .file-icon {
+            color: #007bff;
+            margin-right: 5px;
+        }
+        .file-path {
+            color: #555;
+        }
+        .toc-header {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            color: #007bff;
+        }
+        .toc ul {
+            padding-left: 0;
+            list-style: none;
+        }
+        .toc li {
+            margin-bottom: 20px;
+        }
+        .toc a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .back-to-top:hover {
+            background-color: #0056b3;
+        }
+        .accordion {
+            margin-bottom: 10px;
+        }
+        .card-header {
+            position: relative;
+            cursor: pointer;
+        }
+        .accordion-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #007bff;
+            transition: transform 0.2s ease;
+        }
+        .accordion-icon.down {
+            transform: translateY(-50%) rotate(0deg);
+        }
+        .accordion-icon.up {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        .icon {
+            margin-right: 10px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="accordion" id="yotpo-social-reviews-for-woocommerce">
+            <div class="card">
+                <div class="card-header" id="heading-yotpo-social-reviews-for-woocommerce">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-yotpo-social-reviews-for-woocommerce" aria-expanded="false" aria-controls="collapse-yotpo-social-reviews-for-woocommerce">
+                            <span class="icon">🔧</span> Yotpo Social Reviews For Woocommerce
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapse-yotpo-social-reviews-for-woocommerce" class="collapse" aria-labelledby="heading-yotpo-social-reviews-for-woocommerce" data-parent="#yotpo-social-reviews-for-woocommerce">
+                    <div class="card-body">
+        
+                    <div class="file-info">
+                        <span class="file-number">File 1:</span>
+                        <span class="file-icon"><i class="fas fa-file-alt"></i></span>
+                        <span class="file-path">class-wc-yotpo-export-reviews.txt</span>
+                        <pre class="code-block"><code><p></p><p><span class="line-number">115</span> $results = $wpdb-&gt;get_results($query);</p><p></p><p class="ellipsis">...</p><p><span class="line-number">115</span> $results = $wpdb-&gt;get_results($query);</p><p></p><p class="ellipsis">...</p><p><span class="line-number">115</span> $results = $wpdb-&gt;get_results($query);</p><p></p><p class="ellipsis">...</p><p><span class="line-number">115</span> $results = $wpdb-&gt;get_results($query);</p><p></p></code></pre>
+                    </div>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accordion" id="zoho-flow">
+            <div class="card">
+                <div class="card-header" id="heading-zoho-flow">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-zoho-flow" aria-expanded="false" aria-controls="collapse-zoho-flow">
+                            <span class="icon">🔧</span> Zoho Flow
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapse-zoho-flow" class="collapse" aria-labelledby="heading-zoho-flow" data-parent="#zoho-flow">
+                    <div class="card-body">
+        
+                    <div class="file-info">
+                        <span class="file-number">File 1:</span>
+                        <span class="file-icon"><i class="fas fa-file-alt"></i></span>
+                        <span class="file-path">lifter-lms.txt</span>
+                        <pre class="code-block"><code><p></p><p><span class="line-number">317</span> $result = $wpdb-&gt;get_results( $sql );</p><p></p><p class="ellipsis">...</p><p><span class="line-number">317</span> $result = $wpdb-&gt;get_results( $sql );</p><p></p><p class="ellipsis">...</p><p><span class="line-number">317</span> $result = $wpdb-&gt;get_results( $sql );</p><p></p><p class="ellipsis">...</p><p><span class="line-number">317</span> $result = $wpdb-&gt;get_results( $sql );</p><p></p></code></pre>
+                    </div>
+                
+                    <div class="file-info">
+                        <span class="file-number">File 2:</span>
+                        <span class="file-icon"><i class="fas fa-file-alt"></i></span>
+                        <span class="file-path">login-signup-popup.txt</span>
+                        <pre class="code-block"><code><p></p><p><span class="line-number">21</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p></p><p class="ellipsis">...</p><p><span class="line-number">21</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p></p><p class="ellipsis">...</p><p><span class="line-number">21</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p></p><p class="ellipsis">...</p><p><span class="line-number">21</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p></p></code></pre>
+                    </div>
+                
+                    <div class="file-info">
+                        <span class="file-number">File 3:</span>
+                        <span class="file-icon"><i class="fas fa-file-alt"></i></span>
+                        <span class="file-path">ninja-tables.txt</span>
+                        <pre class="code-block"><code><p></p><p><span class="line-number">116</span> return $wpdb-&gt;query($fetch_q);</p><p class="ellipsis">...</p><p><span class="line-number">126</span> return $wpdb-&gt;get_row($fetch_q);</p><p></p><p class="ellipsis">...</p><p><span class="line-number">116</span> return $wpdb-&gt;query($fetch_q);</p><p class="ellipsis">...</p><p><span class="line-number">126</span> return $wpdb-&gt;get_row($fetch_q);</p><p></p><p class="ellipsis">...</p><p><span class="line-number">116</span> return $wpdb-&gt;query($fetch_q);</p><p class="ellipsis">...</p><p><span class="line-number">126</span> return $wpdb-&gt;get_row($fetch_q);</p><p></p><p class="ellipsis">...</p><p><span class="line-number">116</span> return $wpdb-&gt;query($fetch_q);</p><p class="ellipsis">...</p><p><span class="line-number">126</span> return $wpdb-&gt;get_row($fetch_q);</p><p></p></code></pre>
+                    </div>
+                
+                    <div class="file-info">
+                        <span class="file-number">File 4:</span>
+                        <span class="file-icon"><i class="fas fa-file-alt"></i></span>
+                        <span class="file-path">quiz-maker.txt</span>
+                        <pre class="code-block"><code><p></p><p><span class="line-number">79</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">86</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">93</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">96</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">104</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">107</span> $result = $wpdb-&gt;get_results( $sql, &quot;ARRAY_A&quot;);</p><p></p><p class="ellipsis">...</p><p><span class="line-number">79</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">86</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">93</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">96</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">104</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">107</span> $result = $wpdb-&gt;get_results( $sql, &quot;ARRAY_A&quot;);</p><p></p><p class="ellipsis">...</p><p><span class="line-number">79</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">86</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">93</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">96</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">104</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">107</span> $result = $wpdb-&gt;get_results( $sql, &quot;ARRAY_A&quot;);</p><p></p><p class="ellipsis">...</p><p><span class="line-number">79</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">86</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">93</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">96</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">104</span> $sql = &quot;SELECT * FROM &quot;.$wpdb-&gt;prefix . $tablename;</p><p class="ellipsis">...</p><p><span class="line-number">107</span> $result = $wpdb-&gt;get_results( $sql, &quot;ARRAY_A&quot;);</p><p></p></code></pre>
+                    </div>
+                
+                    <div class="file-info">
+                        <span class="file-number">File 5:</span>
+                        <span class="file-icon"><i class="fas fa-file-alt"></i></span>
+                        <span class="file-path">simple-membership.txt</span>
+                        <pre class="code-block"><code><p></p><p><span class="line-number">104</span> $level = $wpdb-&gt;get_row($query, ARRAY_A);</p><p class="ellipsis">...</p><p><span class="line-number">136</span> $profile = $wpdb-&gt;get_row($query, ARRAY_A);</p><p class="ellipsis">...</p><p><span class="line-number">170</span> $profile = $wpdb-&gt;get_row($query, ARRAY_A);</p><p class="ellipsis">...</p><p><span class="line-number">226</span> $totalitems = $wpdb-&gt;query($query);</p><p class="ellipsis">...</p><p><span class="line-number">228</span> $members = $wpdb-&gt;get_results($query, ARRAY_A);</p><p></p><p class="ellipsis">...</p><p><span class="line-number">104</span> $level = $wpdb-&gt;get_row($query, ARRAY_A);</p><p class="ellipsis">...</p><p><span class="line-number">136</span> $profile = $wpdb-&gt;get_row($query, ARRAY_A);</p><p class="ellipsis">...</p><p><span class="line-number">170</span> $profile = $wpdb-&gt;get_row($query, ARRAY_A);</p><p class="ellipsis">...</p><p><span class="line-number">226</span> $totalitems = $wpdb-&gt;query($query);</p><p class="ellipsis">...</p><p><span class="line-number">228</span> $members = $wpdb-&gt;get_results($query, ARRAY_A);</p><p></p><p class="ellipsis">...</p><p><span class="line-number">104</span> $level = $wpdb-&gt;get_row($query, ARRAY_A);</p><p class="ellipsis">...</p><p><span class="line-number">136</span> $profile = $wpdb-&gt;get_row($query, ARRAY_A);</p><p class="ellipsis">...</p><p><span class="line-number">170</span> $profile = $wpdb-&gt;get_row($query, ARRAY_A);</p><p class="ellipsis">...</p><p><span class="line-number">226</span> $totalitems = $wpdb-&gt;query($query);</p><p class="ellipsis">...</p><p><span class="line-number">228</span> $members = $wpdb-&gt;get_results($query, ARRAY_A);</p><p></p><p class="ellipsis">...</p><p><span class="line-number">104</span> $level = $wpdb-&gt;get_row($query, ARRAY_A);</p><p class="ellipsis">...</p><p><span class="line-number">136</span> $profile = $wpdb-&gt;get_row($query, ARRAY_A);</p><p class="ellipsis">...</p><p><span class="line-number">170</span> $profile = $wpdb-&gt;get_row($query, ARRAY_A);</p><p class="ellipsis">...</p><p><span class="line-number">226</span> $totalitems = $wpdb-&gt;query($query);</p><p class="ellipsis">...</p><p><span class="line-number">228</span> $members = $wpdb-&gt;get_results($query, ARRAY_A);</p><p></p></code></pre>
+                    </div>
+                
+                    <div class="file-info">
+                        <span class="file-number">File 6:</span>
+                        <span class="file-icon"><i class="fas fa-file-alt"></i></span>
+                        <span class="file-path">wordpress-org.txt</span>
+                        <pre class="code-block"><code><p></p><p><span class="line-number">1335</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p class="ellipsis">...</p><p><span class="line-number">1363</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p class="ellipsis">...</p><p><span class="line-number">1376</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p></p><p class="ellipsis">...</p><p><span class="line-number">1335</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p class="ellipsis">...</p><p><span class="line-number">1363</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p class="ellipsis">...</p><p><span class="line-number">1376</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p></p><p class="ellipsis">...</p><p><span class="line-number">1335</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p class="ellipsis">...</p><p><span class="line-number">1363</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p class="ellipsis">...</p><p><span class="line-number">1376</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p></p><p class="ellipsis">...</p><p><span class="line-number">1335</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p class="ellipsis">...</p><p><span class="line-number">1363</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p class="ellipsis">...</p><p><span class="line-number">1376</span> $meta_keys = $wpdb-&gt;get_results( $query );</p><p></p></code></pre>
+                    </div>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.querySelectorAll('.card-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const icon = this.querySelector('.accordion-icon');
+                const targetCollapse = this.nextElementSibling;
+                const isCollapsed = targetCollapse.classList.contains('show');
+
+                // Toggle collapse
+                $(targetCollapse).collapse(isCollapsed ? 'hide' : 'show');
+                
+                // Toggle icon rotation
+                if (icon) {
+                    icon.classList.toggle('up', !isCollapsed);
+                    icon.classList.toggle('down', isCollapsed);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

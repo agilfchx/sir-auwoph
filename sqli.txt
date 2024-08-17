@@ -1,0 +1,3 @@
+(?<!prepare)\(('|")SELECT.+FROM.+('|").*\..*
+wpdb->(query|get_var|get_row|get_col|get_results|replace)\((?!.*prepare).*\);
+\$sql\s*=\s*"SELECT.*?FROM\s
