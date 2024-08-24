@@ -58,7 +58,9 @@ def read_files(patterns, plugin_slug, rules_name):
                     file_count += 1
 
     if file_count > 0 or code_count > 0:
-        print(f"{Fore.GREEN}[+]{Style.RESET_ALL} Scanning for {Fore.RED}{rules_name.upper()}{Style.RESET_ALL} Completed! Found: {Fore.RED}{file_count}{Style.RESET_ALL} files and {Fore.RED}{code_count}{Style.RESET_ALL} code")
+        print(f"{Fore.GREEN}[+]{Style.RESET_ALL} Scanning for {Fore.GREEN}{rules_name.upper()}{Style.RESET_ALL} Completed! Found: {Fore.GREEN}{file_count}{Style.RESET_ALL} files and {Fore.GREEN}{code_count}{Style.RESET_ALL} code")
+    else:
+        print(f"{Fore.RED}[-]{Style.RESET_ALL} Not vulnerable to the rule: {Fore.RED}{rules_name.upper()}{Style.RESET_ALL}")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='WordPress Plugin Scanner')
@@ -67,18 +69,16 @@ if __name__ == '__main__':
     args = parser.parse_args()
     rules_file = args.rules
 
-    # Ambil nama file rules tanpa ekstensi
     rules_name = os.path.splitext(os.path.basename(rules_file))[0]
 
-    # Ambil patterns dari file rules yang diinput
     patterns = get_patterns(rules_file)
 
     plugins_dir = 'plugins'
 
-    # Loop melalui setiap folder dalam direktori plugins
     for plugin_slug in os.listdir(plugins_dir):
         plugin_path = os.path.join(plugins_dir, plugin_slug)
         if os.path.isdir(plugin_path):
+            print("-=---=-")
             print(f"{Fore.BLUE}[i]{Style.RESET_ALL} Scanning plugin: {plugin_slug}")
             read_files(patterns, plugin_slug, rules_name)
             generate_report()

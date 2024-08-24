@@ -13,22 +13,29 @@ def convert_to_html(content):
 
 def generate_report():
     combined_content = ''
-    overview_content = '<div class="plugin-overview-header">Plugin Overview</div><div class="plugin-overview"><ul>'
     results_directory = 'results'
+    plugin_counter = 0
+    report_generated = False 
+
+    overview_content = '''
+        <div class="plugin-overview-header">Plugin Overview</div>
+        <div class="plugin-overview">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Plugin Scanned:</strong> {plugin_counter}
+                </li>
+            </ul>
+        </div>
+    '''
 
     for plugin_folder in glob.glob(os.path.join(results_directory, '*')):
         plugin_slug = os.path.basename(plugin_folder)
         plugin_name = plugin_slug.replace('-', ' ').title()
         vuln_folder = os.path.join(plugin_folder, 'vuln')
-        
-        if not os.path.exists(vuln_folder):
-            print(f"No vulnerabilities found for plugin {plugin_slug}.")
-            continue
 
         accordion_id = html.escape(plugin_slug)
-        emoji_icon = '🔧'  # Replace with desired emoji
+        emoji_icon = '🔧'
 
-        # Reset file counter for each plugin
         file_counter = 1
 
         combined_content += f'''
@@ -84,7 +91,7 @@ def generate_report():
                 formatted_content += '</code></pre>'
                 file_name = os.path.basename(txt_file).replace('.txt', '.php')
                 file_info = f'<div class="file-info"><span class="file-number">{file_counter}</span><i class="file-icon fas fa-file-code"></i><strong>File:</strong> {file_name} ({html.escape(file_path if file_path else os.path.basename(txt_file))})</div>'
-                file_counter += 1  # Increment file counter for the current plugin
+                file_counter += 1
 
                 combined_content += file_info + formatted_content
 
@@ -94,13 +101,13 @@ def generate_report():
             </div>
         </div>
         '''
+        
+        plugin_counter += 1
 
-    overview_content += '</ul></div>'
+    overview_content = overview_content.format(plugin_counter=plugin_counter)
     combined_content = overview_content + combined_content
 
     output_file = os.path.join(results_directory, 'output.html')
 
     with open(output_file, 'w', encoding='utf-8') as html_file:
         html_file.write(convert_to_html(combined_content))
-
-    print(f"Report generated at {output_file}")
